@@ -1,3 +1,5 @@
+
+@import '~antd/dist/antd.css';
 .App {
   text-align: center;
 }
@@ -6,7 +8,22 @@
   height: 40vmin;
   pointer-events: none;
 }
-
+.clear { clear: both }
+#text1_results{
+  width: 50%;
+  float: left;
+  text-align: left;
+  padding: 0 0 0 14%;
+}
+#text2_results{
+  width: 50%;
+  float: right;
+  text-align: left;
+  padding: 0 0 0 11%;
+}
+#result_charts{
+  width: 80vw;
+}
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;

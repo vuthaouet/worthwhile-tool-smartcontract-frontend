@@ -1,25 +1,30 @@
-import logo from './logo.svg';
+import React, {useEffect, useState} from 'react';
+import { Button } from 'antd';
 import './App.css';
+import ReactDOM from "react-dom";
+import MyUpload from "./api/upload"
+import PicturesWall from "./test";
+import Demo from "./api/test2";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const [currentTime, setCurrentTime] = useState(0);
+
+    useEffect(() => {
+        fetch('/time').then(res => res.json()).then(data => {
+            setCurrentTime(data.time);
+        });
+    }, []);
+
+    return (
+        <div className="App" style={{width: '80%',margin : 'auto'}}>
+            <h1>Smart Contract Security Analysis.</h1>
+            <MyUpload/>
+        </div>
+    );
+
+
+
 }
+
 
 export default App;
